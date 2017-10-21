@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './counter';
@@ -19,8 +20,9 @@ import { ViewCounterComponent } from './view-counter/view-counter.component';
     ViewCounterComponent
   ],
   imports: [
-    BrowserModule,
-    StoreModule.forRoot({ counter: counterReducer })
+    BrowserModule,  
+    StoreModule.forRoot({ counter: counterReducer }),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
