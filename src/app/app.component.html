@@ -1,7 +1,8 @@
 <h1>{{ title }}</h1>
 <div> 현재 카운트 : {{ counter | async }}</div>
 
-<button (click)="increment()">증가</button>
+<!-- <button (click)="increment()">증가</button> -->
+<app-increment></app-increment>
 
 <button (click)="decrement()">감소</button>
 

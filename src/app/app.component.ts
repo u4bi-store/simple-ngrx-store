@@ -21,13 +21,13 @@ export class AppComponent {
 
     }
     
-    /* 증가 */
-    increment(){
-        this.store.dispatch({
-            type: INCREMENT
-        });
+    // /* 증가 */
+    // increment(){
+    //     this.store.dispatch({
+    //         type: INCREMENT
+    //     });
 
-    }
+    // }
     
     /* 감소 */
     decrement(){
