@@ -13,10 +13,13 @@ import { INCREMENT, DECREMENT, RESET } from '../counter';
 export class RouterComponent implements OnInit {
 
     counter: Observable<number>;
+    count : number;
 
     constructor(private store: Store<AppState>) {
         
         this.counter = store.select('counter');
+        
+        this.counter.subscribe(e => this.count = e); // 구독
 
     }
 
