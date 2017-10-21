@@ -30,12 +30,12 @@ export class AppComponent {
     // }
     
     /* 감소 */
-    decrement(){
-        this.store.dispatch({
-          type: DECREMENT
-        });
+    // decrement(){
+    //     this.store.dispatch({
+    //       type: DECREMENT
+    //     });
 
-    }
+    // }
     
     /* 초기화 */
     reset(){
