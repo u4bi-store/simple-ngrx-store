@@ -14,6 +14,10 @@ const routes: Routes = [
         component : RouterChildComponent
       }
     ]
+  },
+  {
+    path: 'lazy-router',
+    loadChildren: './lazy-router/lazy-router.module#LazyRouterModule'
   }
 ];
 
