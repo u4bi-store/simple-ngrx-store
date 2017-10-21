@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppState } from '../app-state';
 
 import { Store } from '@ngrx/store';
-import { INCREMENT, DECREMENT, RESET } from '../counter';
+import { RESET } from '../counter';
 
 @Component({
   selector: 'app-reset',
