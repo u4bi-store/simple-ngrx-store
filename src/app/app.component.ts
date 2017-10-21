@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppState } from './app-state';
 
 @Component({
   selector: 'app-root',
