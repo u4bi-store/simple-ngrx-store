@@ -1,29 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { AppState } from '../app-state';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { INCREMENT, DECREMENT, RESET } from '../counter';
 
+import { ISubscription } from "rxjs/Subscription";
+
 @Component({
   selector: 'app-lazy-router',
   templateUrl: './lazy-router.component.html',
   styleUrls: ['./lazy-router.component.css']
 })
-export class LazyRouterComponent implements OnInit {
+export class LazyRouterComponent implements OnDestroy {
 
   counter: Observable<number>;
   count : number;
+  subscription : ISubscription;
 
   constructor(private store: Store<AppState>) {
       
       this.counter = store.select('counter');
       
-      this.counter.subscribe(e => this.count = e); // 구독
+      this.subscription = this.counter.subscribe(e => this.count = e); // 구독
 
   }
 
-  ngOnInit() {
+  ngOnDestroy() {
+      this.subscription.unsubscribe();
   }
 
   /* 증가 */

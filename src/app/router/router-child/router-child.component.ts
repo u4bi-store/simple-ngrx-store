@@ -1,29 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { AppState } from '../../app-state';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { INCREMENT, DECREMENT, RESET } from '../../counter';
 
+import { ISubscription } from "rxjs/Subscription";
+
 @Component({
   selector: 'app-router-child',
   templateUrl: './router-child.component.html',
   styleUrls: ['./router-child.component.css']
 })
-export class RouterChildComponent implements OnInit {
+export class RouterChildComponent implements OnDestroy {
 
     counter: Observable<number>;
     count : number;
+    subscription : ISubscription;
 
     constructor(private store: Store<AppState>) {
         
         this.counter = store.select('counter');
         
-        this.counter.subscribe(e => this.count = e); // 구독
+        this.subscription = this.counter.subscribe(e => this.count = e); // 구독
 
     }
 
-    ngOnInit() {
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 
     /* 증가 */
