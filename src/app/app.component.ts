@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { AppState } from './app-state';
+// import { AppState } from './app-state';
 
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
+// import { Store } from '@ngrx/store';
+// import { Observable } from 'rxjs/Observable';
 // import { INCREMENT, DECREMENT, RESET } from './counter';
 
 @Component({
@@ -13,13 +13,13 @@ import { Observable } from 'rxjs/Observable';
 export class AppComponent {
     title = 'app';
 
-    counter: Observable<number>;
+    // counter: Observable<number>;
 
-    constructor(private store: Store<AppState>) {
+    // constructor(private store: Store<AppState>) {
         
-        this.counter = store.select('counter');
+    //     this.counter = store.select('counter');
 
-    }
+    // }
     
     // /* 증가 */
     // increment(){
