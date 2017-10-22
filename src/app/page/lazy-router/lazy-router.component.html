@@ -1,0 +1,21 @@
+<div>
+
+  <p>
+    lazy-router works!
+  </p>
+
+    <!--
+      counter | async 시 아래 오류 발생
+      The pipe 'async' could not be found
+      현재 카운트 : [ERROR ->]counter | async
+    -->
+
+  <p> 현재 카운트 : {{ count }} </p>
+
+  <button (click)="increment()">증가</button>
+
+  <button (click)="decrement()">감소</button>
+
+  <button (click)="reset()">초기화</button>
+
+</div>
